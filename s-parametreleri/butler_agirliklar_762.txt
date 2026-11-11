@@ -1,0 +1,78 @@
+Butler agirliklari (0.762 mm, hibrit_762 + crossover_762, 5.80 GHz)
+CST: Post-Processing > Combine Results. Her Butler girisi icin 8 portun
+genlik ve fazini asagidaki gibi gir (Port n = sutun n, soldan saga).
+Giris 1 ~ +7 derece, 2 ~ +22, 3 ~ +39, 4 ~ +61, 5 ~ -61, 6 ~ -39, 7 ~ -22, 8 ~ -6
+
+Giris 1:
+   Port 1  genlik 1.000  faz     0.0
+   Port 2  genlik 0.739  faz   -20.8
+   Port 3  genlik 0.774  faz   -40.0
+   Port 4  genlik 0.666  faz   -68.4
+   Port 5  genlik 0.561  faz   -90.6
+   Port 6  genlik 0.560  faz  -107.1
+   Port 7  genlik 0.500  faz  -131.0
+   Port 8  genlik 0.611  faz  -155.4
+Giris 2:
+   Port 1  genlik 0.972  faz     0.0
+   Port 2  genlik 0.795  faz   -56.2
+   Port 3  genlik 0.762  faz  -134.9
+   Port 4  genlik 0.781  faz   142.7
+   Port 5  genlik 0.894  faz    82.8
+   Port 6  genlik 0.915  faz    19.1
+   Port 7  genlik 0.886  faz   -35.3
+   Port 8  genlik 1.000  faz  -101.9
+Giris 3:
+   Port 1  genlik 1.000  faz     0.0
+   Port 2  genlik 0.787  faz  -119.0
+   Port 3  genlik 0.794  faz   129.9
+   Port 4  genlik 0.772  faz    23.9
+   Port 5  genlik 0.891  faz   -96.4
+   Port 6  genlik 0.920  faz   151.5
+   Port 7  genlik 0.842  faz    45.7
+   Port 8  genlik 0.879  faz   -66.0
+Giris 4:
+   Port 1  genlik 0.813  faz     0.0
+   Port 2  genlik 0.893  faz  -167.2
+   Port 3  genlik 0.803  faz    48.8
+   Port 4  genlik 0.823  faz  -112.0
+   Port 5  genlik 0.750  faz    87.6
+   Port 6  genlik 0.928  faz   -65.7
+   Port 7  genlik 0.733  faz   127.6
+   Port 8  genlik 1.000  faz   -19.7
+Giris 5:
+   Port 1  genlik 1.000  faz     0.0
+   Port 2  genlik 0.796  faz   155.2
+   Port 3  genlik 0.920  faz   -48.0
+   Port 4  genlik 0.718  faz   115.4
+   Port 5  genlik 0.880  faz   -83.1
+   Port 6  genlik 0.748  faz    67.0
+   Port 7  genlik 0.994  faz  -132.9
+   Port 8  genlik 0.838  faz    26.0
+Giris 6:
+   Port 1  genlik 0.838  faz     0.0
+   Port 2  genlik 0.853  faz   101.7
+   Port 3  genlik 0.826  faz  -150.3
+   Port 4  genlik 0.827  faz   -24.6
+   Port 5  genlik 0.788  faz    91.1
+   Port 6  genlik 0.900  faz  -163.8
+   Port 7  genlik 0.780  faz   -50.6
+   Port 8  genlik 1.000  faz    62.8
+Giris 7:
+   Port 1  genlik 0.873  faz     0.0
+   Port 2  genlik 0.793  faz    72.4
+   Port 3  genlik 0.978  faz   138.7
+   Port 4  genlik 0.844  faz  -158.7
+   Port 5  genlik 1.000  faz   -85.8
+   Port 6  genlik 0.941  faz   -18.8
+   Port 7  genlik 0.814  faz    43.6
+   Port 8  genlik 0.961  faz   111.2
+Giris 8:
+   Port 1  genlik 0.681  faz     0.0
+   Port 2  genlik 0.640  faz    33.7
+   Port 3  genlik 0.744  faz    51.9
+   Port 4  genlik 0.879  faz    76.6
+   Port 5  genlik 0.645  faz    98.0
+   Port 6  genlik 0.752  faz   115.9
+   Port 7  genlik 0.801  faz   132.3
+   Port 8  genlik 1.000  faz   145.8
+
