@@ -1,0 +1,77 @@
+Butler weights (0.762 mm, hybrid_762 + crossover_762, 5.80 GHz)
+CST: Post-Processing > Combine Results. For each Butler input enter the
+amplitude and phase of the 8 ports as below (Port n = column n, left to right).
+Input 1 ~ +7 deg, 2 ~ +22, 3 ~ +39, 4 ~ +61, 5 ~ -61, 6 ~ -39, 7 ~ -22, 8 ~ -6
+
+Input 1:
+   Port 1  amplitude 1.000  phase     0.0
+   Port 2  amplitude 0.739  phase   -20.8
+   Port 3  amplitude 0.774  phase   -40.0
+   Port 4  amplitude 0.666  phase   -68.4
+   Port 5  amplitude 0.561  phase   -90.6
+   Port 6  amplitude 0.560  phase  -107.1
+   Port 7  amplitude 0.500  phase  -131.0
+   Port 8  amplitude 0.611  phase  -155.4
+Input 2:
+   Port 1  amplitude 0.972  phase     0.0
+   Port 2  amplitude 0.795  phase   -56.2
+   Port 3  amplitude 0.762  phase  -134.9
+   Port 4  amplitude 0.781  phase   142.7
+   Port 5  amplitude 0.894  phase    82.8
+   Port 6  amplitude 0.915  phase    19.1
+   Port 7  amplitude 0.886  phase   -35.3
+   Port 8  amplitude 1.000  phase  -101.9
+Input 3:
+   Port 1  amplitude 1.000  phase     0.0
+   Port 2  amplitude 0.787  phase  -119.0
+   Port 3  amplitude 0.794  phase   129.9
+   Port 4  amplitude 0.772  phase    23.9
+   Port 5  amplitude 0.891  phase   -96.4
+   Port 6  amplitude 0.920  phase   151.5
+   Port 7  amplitude 0.842  phase    45.7
+   Port 8  amplitude 0.879  phase   -66.0
+Input 4:
+   Port 1  amplitude 0.813  phase     0.0
+   Port 2  amplitude 0.893  phase  -167.2
+   Port 3  amplitude 0.803  phase    48.8
+   Port 4  amplitude 0.823  phase  -112.0
+   Port 5  amplitude 0.750  phase    87.6
+   Port 6  amplitude 0.928  phase   -65.7
+   Port 7  amplitude 0.733  phase   127.6
+   Port 8  amplitude 1.000  phase   -19.7
+Input 5:
+   Port 1  amplitude 1.000  phase     0.0
+   Port 2  amplitude 0.796  phase   155.2
+   Port 3  amplitude 0.920  phase   -48.0
+   Port 4  amplitude 0.718  phase   115.4
+   Port 5  amplitude 0.880  phase   -83.1
+   Port 6  amplitude 0.748  phase    67.0
+   Port 7  amplitude 0.994  phase  -132.9
+   Port 8  amplitude 0.838  phase    26.0
+Input 6:
+   Port 1  amplitude 0.838  phase     0.0
+   Port 2  amplitude 0.853  phase   101.7
+   Port 3  amplitude 0.826  phase  -150.3
+   Port 4  amplitude 0.827  phase   -24.6
+   Port 5  amplitude 0.788  phase    91.1
+   Port 6  amplitude 0.900  phase  -163.8
+   Port 7  amplitude 0.780  phase   -50.6
+   Port 8  amplitude 1.000  phase    62.8
+Input 7:
+   Port 1  amplitude 0.873  phase     0.0
+   Port 2  amplitude 0.793  phase    72.4
+   Port 3  amplitude 0.978  phase   138.7
+   Port 4  amplitude 0.844  phase  -158.7
+   Port 5  amplitude 1.000  phase   -85.8
+   Port 6  amplitude 0.941  phase   -18.8
+   Port 7  amplitude 0.814  phase    43.6
+   Port 8  amplitude 0.961  phase   111.2
+Input 8:
+   Port 1  amplitude 0.681  phase     0.0
+   Port 2  amplitude 0.640  phase    33.7
+   Port 3  amplitude 0.744  phase    51.9
+   Port 4  amplitude 0.879  phase    76.6
+   Port 5  amplitude 0.645  phase    98.0
+   Port 6  amplitude 0.752  phase   115.9
+   Port 7  amplitude 0.801  phase   132.3
+   Port 8  amplitude 1.000  phase   145.8

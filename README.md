@@ -2,11 +2,9 @@
 
 A 64-patch array for a UAV video-link ground station. An 8×8 Butler matrix steers the beam to 8 fixed directions in azimuth with no mechanical rotation. Full-wave simulated in commercial CST Studio Suite.
 
-*Türkçe açıklama: [README.tr.md](README.tr.md)*
-
 **Signal chain:** STM32 (3 GPIO) → SP8T switch → 8×8 Butler matrix → 8 series-fed columns → 64 patches
 
-![Full board](sunum/gorseller-en/full_board.png)
+![Full board](figures/full_board.png)
 
 ## Results (CST, 5.80 GHz)
 
@@ -33,11 +31,11 @@ Gains are at the array ports; Butler-matrix and SP8T losses are not included.
 | 7 | −21° | 22.6 dBi | 13.5° | −12.9 dB | −12.8 dB |
 | 8 | −6° | 22.8 dBi | 12.4° | −12.9 dB | −14.1 dB |
 
-![Beams in the scan plane](sonuclar/cst/huzmeler_tarama_5p80.png)
+![Beams in the scan plane](results/cst/beams_scan_5p80.png)
 
-![Active S11](sonuclar/cst/aktif_s11.png)
+![Active S11](results/cst/active_s11.png)
 
-![Before and after tuning](sunum/gorseller-en/before_after.png)
+![Before and after tuning](figures/before_after.png)
 
 ## Design
 
@@ -59,21 +57,21 @@ Gains are at the array ports; Butler-matrix and SP8T losses are not included.
 4. L and Lc were tuned together using measured sensitivities and the matching transformer was redesigned with an ideal-line model. Tilt dropped to 0.1° and broadside gain rose from 17.7 to 22.8 dBi.
 5. In total: 5 full-array runs and 14 single-column runs.
 
-Details: [dokumanlar/teknik_ozet.md](dokumanlar/teknik_ozet.md)
+Details: [docs/technical_summary.md](docs/technical_summary.md) · Related work: [docs/related_work.md](docs/related_work.md)
 
 ## Reproducing the analysis
 
-The Butler matrix is not simulated as one circuit. The hybrid and the crossover were simulated separately in CST (`s-parametreleri/hibrit_762.s4p`, `crossover_762.s4p`). `scriptler/butler_hesap.py` cascades them into the column excitations `s-parametreleri/butler_agirliklar_762.txt`, which are then applied to the full-wave array results:
+The Butler matrix is not simulated as one circuit. The hybrid and the crossover were simulated separately in CST (`s-parameters/hybrid_762.s4p`, `crossover_762.s4p`). `scripts/butler_network.py` cascades them into the column excitations `s-parameters/butler_weights_762.txt`, which are then applied to the full-wave array results:
 
 ```
 pip install numpy matplotlib
-python scriptler/butler_hesap.py                      # hybrid + crossover -> Butler weights
-python scriptler/aktif_s11.py                         # s8p + weights -> active S11
-python scriptler/butler_huzmeler.py <farfield folder> # 8 port farfields -> beams, gain, table
-python scriptler/sutun_desen.py <farfield folder>     # single column pattern
+python scripts/butler_network.py                    # hybrid + crossover -> Butler weights
+python scripts/active_s11.py                        # array s8p + weights -> active S11
+python scripts/butler_beams.py <farfield folder>    # 8 port farfields -> beams, gain, table
+python scripts/column_pattern.py <farfield folder>  # single-column pattern
 ```
 
-The per-port farfields (8 × 10 MB at 5.80 GHz) are too large for this repository. Regenerate them by running `cst-makrolar/cst_farfield_aktar.bas` in `cst/dizi8x8cst.cst`.
+The scripts read the zipped Touchstone files directly. The per-port farfields (8 × 10 MB at 5.80 GHz) are too large for this repository; export them from `cst/array_8x8.cst` (Farfields → ASCII export, one file per port, named `ff_5p80_port1.txt` … `ff_5p80_port8.txt`).
 
 ## Limitations
 
@@ -86,15 +84,14 @@ The per-port farfields (8 × 10 MB at 5.80 GHz) are too large for this repositor
 
 | Path | Contents |
 |---|---|
-| `cst/` | `dizi8x8cst.cst` (final 8×8 array), `sutun_cst_762.cst` (single column), series-column trials, `kuplaj.cst`, `patch.cst` |
-| `cst/butler/` | crossover designs (3-branch → final two-hybrid) |
-| `cst-makrolar/` | VBA macros that build the array and export S-parameters and farfields |
-| `scriptler/` | Butler weights, active S11, beam analysis, openEMS pre-design |
-| `s-parametreleri/` | `dizi_cst_762.s8p` (final array), `hibrit_762.s4p` and `crossover_762.s4p` (final hybrid and crossover), Butler weights; the `.zip` files hold earlier iterations and the single-column `.s8p` |
-| `sonuclar/cst/` | final CST analysis: beam table, active S11, plots |
-| `sonuclar/openems/` | openEMS pre-design results |
-| `sunum/` | presentation figures (TR and EN) |
-| `dokumanlar/` | technical summary, CST guides, literature review |
+| `cst/` | `array_8x8.cst` (final 8×8 array), `column_762.cst` (single column), series-column trials, `coupling.cst`, `patch.cst` |
+| `cst/butler/` | crossover designs (three-branch → final two-hybrid `crossover2h.cst`) |
+| `scripts/` | Butler network, active S11, beam analysis (`common.py` holds the shared readers), openEMS pre-design, early HFSS column script |
+| `s-parameters/` | `array_8x8_762.s8p.zip` (final array), `column_762.s1p` (single column), `hybrid_762.s4p` and `crossover_762.s4p` (final hybrid and crossover), Butler weights; `earlier-iterations/` holds the 0.8 mm hybrid/crossovers and the tilted first-tuning array |
+| `results/cst/` | final CST analysis: beam table, active S11, Butler array factor, plots |
+| `results/openems/` | openEMS pre-design results |
+| `figures/` | presentation figures |
+| `docs/` | technical summary and related-work survey |
 
 ## Author
 
